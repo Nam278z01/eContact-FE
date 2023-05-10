@@ -1,0 +1,26 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">
+      Điểm học phần - Năm {{ academy_year }} - Kỳ {{ semester }}
+    </p>
+  </div>
+  <div class="p-[5px]">
+    <div
+      *ngFor="let point of points; index as i"
+      class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex px-[30px] py-[10px] items-center mb-[5px]"
+    >
+      <div
+        class="border-[6px] border-[#0180fe] rounded-full min-w-[72px] w-[72px] h-[72px] flex justify-center items-center font-semibold text-3xl"
+      >
+        {{ point.score }}
+      </div>
+      <div class="pl-[25px] font-bold text-lg">
+        <p class="font-bold">{{ point.subject_name }}</p>
+        <p class="text-base">Số tín chỉ: {{ point.number_credits }}</p>
+      </div>
+    </div>
+  </div>
+</section>

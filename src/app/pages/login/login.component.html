@@ -1,0 +1,66 @@
+<section class="bg-[#ffffff] relative flex flex-col h-screen">
+  <div class="relative h-[190px]">
+    <img src="/assets/drawable-v24/wave.png" alt="wave" class="w-full h-full" />
+    <div
+      class="w-full absolute top-[40px] flex justify-between items-center pl-[8%] pr-[16%] font-semibold text-4xl italic"
+    >
+      <img
+        src="/assets/drawable-v24/logo-utehy2.png"
+        alt="wave"
+        class="w-[100px] h-[100px] rounded-full"
+      />
+      <p class="text-[#ffffff]">EContact</p>
+    </div>
+  </div>
+
+  <div class="w-full flex-1 rounded-lg p-[10px] pb-[20px]">
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit(loginForm.value)"
+      class="h-full border-2 border-[#0099ff] rounded-[28px] shadow-md"
+    >
+      <p class="font-bold text-center text-xl p-[20px] pb-[10px]">Đăng nhập</p>
+      <div class="py-[10px] px-[15px]">
+        <label for="phone_number" class="block text-[#8f8c8c] text-xs"
+          >Nhập số điện thoại</label
+        >
+        <input
+          formControlName="phone_number"
+          id="phone_number"
+          type="text"
+          class="w-full my-[8px] p-[8px] bg-[#e0f7ff] outline-none border-none rounded-md"
+          placeholder="Nhập số điện thoại"
+        />
+      </div>
+      <div class="py-[10px] px-[15px]">
+        <label for="password" class="block text-[#8f8c8c] text-xs"
+          >Nhập mật khẩu</label
+        >
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          class="w-full my-[8px] p-[8px] bg-[#e0f7ff] outline-none border-none rounded-md"
+          placeholder="Nhập mật khẩu"
+        />
+      </div>
+      <div class="text-[#8f8c8c] text-xs text-center pb-[10px]">
+        <p>*Tiếp tục nghĩa là bạn đồng ý với các</p>
+        <p class="text-[#4fa1e8]">Điều khoản sử dụng của Econtact</p>
+      </div>
+      <div class="px-[15px] pt-[8px]">
+        <button
+          type="submit"
+          class="bg-[#0099ff] flex w-full rounded-md outline-none border-none justify-center items-center uppercase text-[#ffffff] text-xs h-[40px]"
+        >
+          Đăng nhập
+        </button>
+        <button
+          class="bg-[#ffffff] mt-[10px] flex w-full rounded-md outline-none justify-center items-center uppercase text-[#0099ff] text-xs h-[40px] border border-[#0099ff]"
+        >
+          Quên mật khẩu
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

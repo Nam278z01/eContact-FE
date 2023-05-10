@@ -1,0 +1,97 @@
+<section class="bg-[#ffffff] relative flex flex-col h-screen">
+  <div class="relative h-[190px]">
+    <img src="/assets/drawable-v24/wave.png" alt="wave" class="w-full h-full">
+    <div class="absolute px-[20px] w-full top-[30px] flex items-center">
+      <div class="h-[60px] w-[60px] overflow-hidden shadow-md rounded-full bg-[#009dfa] p-[5px]">
+        <img src="/assets/drawable-v24/student.jpg" alt="student" class="h-full w-full rounded-full">
+      </div>
+      <div class="pl-[15px] flex flex-col justify-center text-[#ffffff] text-sm">
+        <p class="font-bold">Xin chào,</p>
+        <p class="font-semibold">{{ user?.full_name }}</p>
+      </div>
+    </div>
+
+    <div class="absolute px-[15px] w-full top-[110px]">
+      <div class="bg-[#ffffff] shadow-md rounded-[20px] w-full h-[76px] flex items-center p-[15px]">
+        <div class="h-[50px] w-[50px] overflow-hidden shadow-md rounded-full p-[5px]">
+          <img src="/assets/drawable-v24/student.jpg" alt="student" class="h-full w-full rounded-full">
+        </div>
+        <div class="pl-[15px] flex flex-col justify-center">
+          <p class="font-bold text-lg">{{ student?.student_name }}</p>
+          <a  [routerLink]="['/user']" class="font-semibold text-xs text-[#449eda]">Xem chi tiết</a>
+        </div>
+      </div>
+    </div>
+
+    <a [routerLink]="['/notification']" class="absolute top-[30px] right-[30px] text-[#ffffff]">
+      <div class="text-3xl">
+        <i class="bx bxs-bell-ring"></i>
+      </div>
+      <!-- <div class="absolute top-0 right-0 bg-red-600 h-[15px] w-[15px] text-center text-xs rounded-full">
+        3
+      </div> -->
+    </a>
+  </div>
+
+  <div class="px-[15px] py-[20px]">
+    <p class="font-bold text-lg">Tiện ích</p>
+    <div class="flex mt-[20px] flex-wrap">
+      <a [routerLink]="['/subject-score']" class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/grade.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Học tập</p>
+      </a>
+      <a [routerLink]="['/point-training']" class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/speedometer.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Rèn luyện</p>
+      </a>
+      <div class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/chat.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Trò chuyện</p>
+      </div>
+      <!-- <div class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/chat.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Liên hệ</p>
+      </div> -->
+      <!-- <div class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/bell.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Thông báo</p>
+      </div> -->
+      <!-- <div class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/calendar.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Lịch học</p>
+      </div> -->
+      <a [routerLink]="['/tuition-fee']" class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/fees.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Học phí</p>
+      </a>
+      <a [routerLink]="['/feedback']" class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/email.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Góp ý</p>
+      </a>
+      <a [routerLink]="['/setting']" class="w-[33.33%] px-[25px] pb-[15px]">
+        <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
+          <img src="/assets/drawable-v24/cogwheel.png" alt="">
+        </div>
+        <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Cài đặt</p>
+      </a>
+    </div>
+  </div>
+
+
+</section>

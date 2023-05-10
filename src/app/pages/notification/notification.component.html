@@ -1,0 +1,24 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">Thông báo</p>
+  </div>
+  <div class="p-[5px]">
+    <div
+      *ngFor="let notify of notifications"
+      class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex px-[10px] py-[10px] items-start mb-[5px] justify-between"
+    >
+      <div class="font-bold text-sm">
+        <p class="font-bold">{{ notify.notification_title }}</p>
+        <p class="text-xs">{{ notify.notification_content }}</p>
+      </div>
+
+      <div class="pl-[15px] text-[#8f8c8c] text-xs ">
+        <p>{{ notify.created_date_time | date:'dd/MM/yyyy' }}</p>
+        <p>{{ notify.created_date_time | date:'h:mm a' }}</p>
+      </div>
+    </div>
+  </div>
+</section>

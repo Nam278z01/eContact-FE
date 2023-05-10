@@ -1,0 +1,91 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">Thông tin sinh viên</p>
+  </div>
+
+  <div class="flex flex-col items-center py-[20px]">
+    <div class="h-[150px] w-[150px] overflow-hidden shadow-[0_3px_8px_rgba(0,0,0,0.24)] rounded-full p-[5px]">
+      <img src="/assets/drawable-v24/student.jpg" alt="student" class="h-full w-full rounded-full">
+    </div>
+    <p class="font-bold text-lg pt-[10px]">{{ student?.student_name }}</p>
+  </div>
+  <div class="px-[15px] pb-[20px]">
+    <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] rounded-[12px]">
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bx-barcode" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.student_rcd }}</p>
+          <p class="text-[#8f8c8c] text-xs">Mã sinh viên</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bx-objects-horizontal-right"></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.class_id }}</p>
+          <p class="text-[#8f8c8c] text-xs">Lớp học</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-graduation"></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>Khoa Công nghệ thông tin</p>
+          <p class="text-[#8f8c8c] text-xs">Khoa</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-group" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.form_teacher }}</p>
+          <p class="text-[#8f8c8c] text-xs">Giáo viên chủ nhiệm</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-calendar" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.date_of_birth | date:"dd/MM/yyyy" }}</p>
+          <p class="text-[#8f8c8c] text-xs">Ngày sinh</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-home" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.student_address }}</p>
+          <p class="text-[#8f8c8c] text-xs">Địa chỉ</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-envelope" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.student_email }}</p>
+          <p class="text-[#8f8c8c] text-xs">Email</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] py-[10px]">
+        <div class="h-[40px] w-[40px] rounded-full shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center items-center text-2xl">
+          <i class="bx bxs-phone" ></i>
+        </div>
+        <div class="flex-1 border-b-2 border-[#000000] pl-[10px] pb-[15px]">
+          <p>{{ student?.student_phone }}</p>
+          <p class="text-[#8f8c8c] text-xs">Số điện thoại</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

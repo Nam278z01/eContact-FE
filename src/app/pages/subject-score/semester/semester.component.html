@@ -1,0 +1,27 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">
+      Điểm học phần - Chọn kỳ học
+    </p>
+  </div>
+  <div class="p-[5px]">
+    <a
+      *ngFor="let item of [].constructor(2); index as i"
+      [routerLink]="['/subject-score/' + academy_year + '/' + (i + 1)]"
+      class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex px-[30px] py-[10px] items-center mb-[5px]"
+    >
+      <div
+        class="border-[6px] border-[#0180fe] rounded-full w-[72px] h-[72px] flex justify-center items-center font-semibold text-3xl"
+      >
+        {{ i + 1 }}
+      </div>
+      <div class="pl-[30px] font-bold text-lg">
+        <p>Năm học: {{ academy_year }}</p>
+        <p>Kỳ học: {{ i + 1 }}</p>
+      </div>
+    </a>
+  </div>
+</section>

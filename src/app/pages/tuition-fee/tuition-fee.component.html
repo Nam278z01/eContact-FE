@@ -1,0 +1,62 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">Học phí</p>
+  </div>
+  <div class="p-[5px]">
+    <div
+      *ngFor="let fee of tuition_fees"
+      class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] rounded-[12px]">
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.academy_year }}</p>
+          <p class="text-[#8f8c8c] text-xs">Năm học</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.semester }}</p>
+          <p class="text-[#8f8c8c] text-xs">Học kỳ</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.owe_tuition_fee_last_semester | number }}</p>
+          <p class="text-[#8f8c8c] text-xs">Nợ học phí kỳ trước</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.tuition_fee_to_be_paid | number }}</p>
+          <p class="text-[#8f8c8c] text-xs">Học phí phải nộp</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.tuition_fee_exemption | number }}</p>
+          <p class="text-[#8f8c8c] text-xs">Miễn giảm</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.tuition_fee_paid | number }}</p>
+          <p class="text-[#8f8c8c] text-xs">Học phí đã nộp</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.lack_or_excess_of_tuition_fee | number }}</p>
+          <p class="text-[#8f8c8c] text-xs">Thiếu/Thừa học phí cuối</p>
+        </div>
+      </div>
+      <div class="flex px-[10px] pb-[4px]">
+        <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
+          <p>{{ fee.note }}</p>
+          <p class="text-[#8f8c8c] text-xs">Ghi chú</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

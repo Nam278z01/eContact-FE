@@ -1,0 +1,24 @@
+<section>
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">Cài đặt</p>
+  </div>
+  <div class="p-[5px]">
+    <a
+      [routerLink]="['/setting/change-password']"
+      class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex px-[15px] py-[10px] items-center mb-[5px]"
+    >
+      <i class="bx bx-barcode"></i>
+      <span class="pl-[10px]">Đổi mật khẩu</span>
+    </a>
+    <button
+      (click)="logout()"
+      class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex px-[15px] py-[10px] items-center mb-[5px] w-full"
+    >
+      <i class="bx bx-log-in-circle"></i>
+      <span class="pl-[10px]">Đăng xuất</span>
+    </button>
+  </div>
+</section>
