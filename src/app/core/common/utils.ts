@@ -34,6 +34,13 @@ export class Utils {
   }
 
   backClicked() {
-    this._location.back();
+    if (history.length <= 1) {
+      // No history URL available
+      // Perform alternative action or display a message
+      this.router.navigate(['/']);
+    } else {
+      // Call the back() method to navigate back
+      this._location.back();
+    }
   }
 }

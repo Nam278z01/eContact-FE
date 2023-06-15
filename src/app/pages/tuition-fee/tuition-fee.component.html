@@ -8,7 +8,7 @@
   <div class="p-[5px]">
     <div
       *ngFor="let fee of tuition_fees"
-      class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] rounded-[12px]">
+      class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] rounded-[12px] mb-4">
       <div class="flex px-[10px] pb-[4px]">
         <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
           <p>{{ fee.academy_year }}</p>
@@ -21,7 +21,7 @@
           <p class="text-[#8f8c8c] text-xs">Học kỳ</p>
         </div>
       </div>
-      <div class="flex px-[10px] pb-[4px]">
+      <div class="flex px-[10px] pb-[4px]" *ngIf="fee.owe_tuition_fee_last_semester">
         <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
           <p>{{ fee.owe_tuition_fee_last_semester | number }}</p>
           <p class="text-[#8f8c8c] text-xs">Nợ học phí kỳ trước</p>
@@ -45,18 +45,43 @@
           <p class="text-[#8f8c8c] text-xs">Học phí đã nộp</p>
         </div>
       </div>
-      <div class="flex px-[10px] pb-[4px]">
+      <div class="flex px-[10px] pb-[4px]" *ngIf="fee.lack_or_excess_of_tuition_fee">
         <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
           <p>{{ fee.lack_or_excess_of_tuition_fee | number }}</p>
           <p class="text-[#8f8c8c] text-xs">Thiếu/Thừa học phí cuối</p>
         </div>
       </div>
-      <div class="flex px-[10px] pb-[4px]">
+      <!-- <div class="flex px-[10px] pb-[4px]">
         <div class="flex-1 border-b-2 border-[#000000] pb-[4px]">
           <p>{{ fee.note }}</p>
           <p class="text-[#8f8c8c] text-xs">Ghi chú</p>
         </div>
-      </div>
+      </div> -->
     </div>
+    <!-- <div class="shadow-[0_1px_4px_rgba(0,0,0,0.16)] flex py-[10px] mb-[5px]">
+      <div class="flex justify-center items-center text-[#fff] w-[25%]">
+        <div class="bg-[#32ba7c] w-[50px] h-[50px] rounded-full flex justify-center items-center">
+          <i class="bx bx-check text-4xl font-bold"></i>
+        </div>
+      </div>
+      <div class="w-[75%]">
+        <div class="py-[2px]">
+          <span class="text-[#7b7b7b] text-sm">Năm học:</span>
+          <span class="text-xl text-bold pl-[10px]">2022-2023</span>
+        </div>
+        <div class="py-[2px]">
+          <span class="text-[#7b7b7b] text-sm">Học kỳ:</span>
+          <span class="text-xl text-bold pl-[10px]">2</span>
+        </div>
+        <div class="py-[2px]">
+          <span class="text-[#7b7b7b] text-sm">Học phí:</span>
+          <span class="text-xl text-bold pl-[10px]">{{ 5873422 | number }}</span>
+        </div>
+        <div class="py-[2px]">
+          <span class="text-[#7b7b7b] text-sm">Trạng thái:</span>
+          <span class="text-xl text-bold pl-[10px] text-[#32ba7c]">Đã thanh toán</span>
+        </div>
+      </div>
+    </div> -->
   </div>
 </section>

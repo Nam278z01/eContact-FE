@@ -18,6 +18,7 @@ import { TuitionFeeComponent } from './pages/tuition-fee/tuition-fee.component';
 import { NotificationComponent } from './pages/notification/notification.component';
 import { SettingComponent } from './pages/setting/setting.component';
 import { FeedbackComponent } from './pages/feedback/feedback.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FeedbackComponent } from './pages/feedback/feedback.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    CommonModule,
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,

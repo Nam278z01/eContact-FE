@@ -27,9 +27,12 @@
       <div class="text-3xl">
         <i class="bx bxs-bell-ring"></i>
       </div>
-      <!-- <div class="absolute top-0 right-0 bg-red-600 h-[15px] w-[15px] text-center text-xs rounded-full">
-        3
-      </div> -->
+      <div *ngIf="count_unchecked_notification > 0" class="absolute top-0 right-0 bg-red-600 h-[15px] w-[15px] text-center text-xs rounded-full">
+        {{ count_unchecked_notification }}
+      </div>
+      <div *ngIf="count_unchecked_notification > 9" class="absolute top-0 right-0 bg-red-600 h-[15px] w-[15px] text-center text-xs rounded-full">
+        9+
+      </div>
     </a>
   </div>
 
@@ -48,12 +51,12 @@
         </div>
         <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Rèn luyện</p>
       </a>
-      <div class="w-[33.33%] px-[25px] pb-[15px]">
+      <a [routerLink]="['/message']" class="w-[33.33%] px-[25px] pb-[15px]">
         <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
           <img src="/assets/drawable-v24/chat.png" alt="">
         </div>
         <p class="text-[#8f8c8c] text-xs text-center pt-[4px]">Trò chuyện</p>
-      </div>
+      </a>
       <!-- <div class="w-[33.33%] px-[25px] pb-[15px]">
         <div class="shadow-[0_3px_8px_rgba(0,0,0,0.24)] flex justify-center rounded-[16px]">
           <img src="/assets/drawable-v24/chat.png" alt="">

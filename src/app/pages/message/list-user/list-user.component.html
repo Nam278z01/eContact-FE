@@ -1,0 +1,105 @@
+<div class="msg-left">
+  <div class="h-[60px] bg-[#0099ff] flex items-center text-[#ffffff] px-[15px]">
+    <button (click)="backClicked()" class="border-none outline-none text-4xl">
+      <i class="bx bx-chevrons-left"></i>
+    </button>
+    <p class="flex-1 text-center text-base pl-[15px]">Chat</p>
+  </div>
+  <!-- <div class="msg-left-header">
+    <div class="msg-left-header-content">
+      <div>Chat</div>
+      <button class="msg-btn-new-message">
+        <i class="fas fa-edit"></i>
+      </button>
+    </div>
+  </div> -->
+
+  <div class="msg-left-search">
+    <div class="msg-left-search-box">
+      <button class="msg-left-btn-search-back">
+        <i class="bx bx-arrow-back"></i>
+      </button>
+      <div class="msg-left-search-input">
+        <label for="msg-search">
+          <i class="bx bx-search"></i>
+        </label>
+        <input
+          type="text"
+          id="msg-search"
+          name="search"
+          placeholder="Tìm kiếm giáo viên"
+          autocomplete="off"
+          (input)="changeTextSearch($event)"
+        />
+      </div>
+    </div>
+    <div class="msg-left-search-list">
+      <a
+        *ngFor="let row of usersInCharSearch; index as i"
+        [routerLink]="['/message/new-message', row.person_id]"
+        class="msg-user-box"
+      >
+        <div class="msg-user">
+          <div class="msg-user-avatar">
+            <img
+              src="{{ row.avatar || '/assets/images/avatars/profile-pic.jpg' }}"
+              alt=""
+            />
+            <!-- <span *ngIf="row.online_flag"></span> -->
+          </div>
+          <div class="msg-user-info">
+            <div class="msg-user-infos">
+              <span>{{ row.full_name }}</span>
+              <span></span>
+            </div>
+            <div class="msg-type-info">
+              {{ row.description_l }}
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="msg-users">
+    <a
+      *ngFor="
+        let row of myChat$ | async;
+        index as i
+      "
+      class="msg-user-box"
+      [routerLink]="['/message/chat-message', row.id]"
+      [class.active]="chatId == row.id"
+    >
+      <div class="msg-user">
+        <div class="msg-user-avatar">
+          <img
+            src="{{
+              row.chatPic ? row.chatPic : '/assets/images/avatars/profile-pic.jpg'
+            }}"
+            alt=""
+          />
+          <!-- <span *ngIf="row.avatar?.online_flag"></span> -->
+        </div>
+        <div class="msg-user-info">
+          <div class="msg-user-infos">
+            <span>{{ row.chatName }}</span>
+            <span>{{ row.lastMessageDate | dateDisplay }}</span>
+          </div>
+          <div class="msg-type-info" [class.msg-unread]="row.countMessageNotSeen! > 0">
+            <span>{{
+              row.lastUserNameMessage
+            }}</span>
+            <span>{{ row.lastMessage }}</span>
+            <span class="msg-type-count-msg-unread" *ngIf="row.countMessageNotSeen! > 0">{{ row.countMessageNotSeen }}</span>
+            <!-- <span class="msg-type-count-msg-read" *ngIf="true">
+              <img src="{{
+                true || '/assets/images/avatars/profile-pic.jpg'
+              }}" alt="">
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

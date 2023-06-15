@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'notification', component: NotificationComponent, canActivate: [AuthGuard] },
   { path: 'feedback', component: FeedbackComponent, canActivate: [AuthGuard] },
   { path: 'setting', loadChildren: () => import('./pages/setting/setting.module').then(m => m.SettingModule), canActivate: [AuthGuard] },
+  { path: 'message', loadChildren: () => import('./pages/message/message.module').then(m => m.MessageModule), canActivate: [AuthGuard] },
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
 ]; // sets up routes constant where you define your routes
 

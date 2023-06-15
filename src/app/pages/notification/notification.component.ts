@@ -29,9 +29,23 @@ export class NotificationComponent extends Utils implements OnInit {
       })
       .subscribe((res: any) => {
         this.notifications = res.data;
+        this.checkNotification();
 
         console.log(this.notifications)
       });
+  }
+
+  checkNotification() {
+    this._apiService
+      .post('/api/adapter/execute', {
+        Method: { Method: 'POST' },
+        Url: '/api/notification2/check-notification2',
+        Module: 'TEACHER',
+        Data: `{`,
+        ContentType: 'application/json',
+        AcceptType: 'application/json',
+      })
+      .subscribe();
   }
 
 }

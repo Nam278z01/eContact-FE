@@ -1,0 +1,6 @@
+<div class="msg-container">
+  <app-list-user *ngIf="showListUser" style="width: 100%;"></app-list-user>
+  <div class="msg-right" *ngIf="!showListUser">
+    <router-outlet></router-outlet>
+  </div>
+</div>

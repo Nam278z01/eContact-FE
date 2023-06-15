@@ -1,0 +1,81 @@
+<div class="msg-right-message">
+  <div class="msg-right-header">
+    <div class="msg-right-user-box">
+      <div class="msg-right-user-avatar">
+        <img
+          src="{{
+            otherUser?.avatar || '/assets/images/avatars/profile-pic.jpg'
+          }}"
+          alt=""
+        />
+        <!-- <span *ngIf="userTexting?.online_flag"></span> -->
+      </div>
+      <div class="msg-right-user-info">
+        <div class="msg-right-user-infos">
+          <span>{{ otherUser?.full_name }}</span>
+          <span>&nbsp;({{ otherUser?.description_l }})</span>
+        </div>
+        <!-- <div *ngIf="userTexting?.online_flag" class="msg-right-type-info">
+          Đang hoạt động
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="msg-right-msg-content" #msgContent [scrollTop]="msgContent.scrollHeight">
+    <div
+      *ngFor="let row of messages$ | async; index as i"
+      class="msg-right-msg-row"
+      [class.is-mine]="currentUser.userId == row.senderId"
+    >
+      <div class="msg-right-msg-row-wrap">
+        <div class="msg-right-msg-row-user">
+          <div class="msg-right-msg-row-user-avatar">
+            <img
+              src="{{ row.senderPhotoUrl || '/assets/images/avatars/profile-pic.jpg' }}"
+              alt=""
+            />
+          </div>
+          <div>&nbsp;</div>
+        </div>
+        <div class="msg-right-msg-row-content">
+          <div class="msg-right-msg-row-content-msg">
+            {{ row.content }}
+          </div>
+          <div>
+            {{ row.sendDate | dateDisplay }}
+          </div>
+        </div>
+        <!-- <div title="Đã xem" class="msg-right-viewed" *ngIf="i == messages.length - 1 && currentUser.user_id == row.created_by_user_id && row.message_read_by">
+          <img
+            src="{{ row.message_read_by && row.message_read_by[0].avatar || '/assets/images/avatars/profile-pic.jpg' }}"
+            alt=""
+          />
+        </div> -->
+      </div>
+    </div>
+    <div #endOfChat></div>
+  </div>
+  <div class="msg-right-send-msg">
+    <form
+      *ngIf="showInputChat"
+      [formGroup]="sendMessageForm"
+      (ngSubmit)="sendMessage()"
+      class="msg-right-send-msg-input"
+    >
+      <input
+        pInputText
+        formControlName="message_content"
+        type="text"
+        placeholder="Aa"
+      />
+      <button
+        [disabled]="!sendMessageForm.valid || submitting"
+        type="submit"
+        class="msg-right-btn-send-msg"
+      >
+        <span>Gửi</span>
+        <img src="/assets/images/send.png" alt="">
+      </button>
+    </form>
+  </div>
+</div>
